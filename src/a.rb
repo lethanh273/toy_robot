@@ -6,7 +6,7 @@ class A
     @y = y
   end
 
-  def z
+  def add
     x + y
   end
 end
