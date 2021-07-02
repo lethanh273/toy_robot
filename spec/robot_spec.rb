@@ -67,20 +67,6 @@ describe Robot do
     end
   end
 
-  context "#report" do
-    let(:robot) { Robot.new }
-
-    it "should tell robot's current position" do
-      expect(capture_stdout { robot.report }).to eq "0,0,NORTH\n"
-    end
-
-    it "should change place and report" do
-      robot.place 1, 2, :east
-      robot.do 'right'
-      expect(capture_stdout { robot.report }).to eq "1,2,SOUTH\n"
-    end
-  end
-
   context "scenarios #1" do
     let(:robot) { Robot.new }
     it "should be at 0,1,NORTH" do

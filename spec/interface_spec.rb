@@ -43,15 +43,4 @@ describe Interface do
     it { is_expected.to have_received(:new).with(router) }
     it { is_expected.to have_received(:report).once }
   end
-
-  context "#move" do
-    before do
-      allow(router).to receive(:next_route).and_return([1,2])
-      interface.move router
-    end
-
-    it { is_expected.to have_received(:next_route).once }
-    it { is_expected.to have_received(:x=).with(1).once }
-    it { is_expected.to have_received(:y=).with(2).once }
-  end
 end
