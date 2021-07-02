@@ -1,6 +1,9 @@
+require "thor"
+
 require "./src/robot"
 
-class ToyRobotClient
+class ToyRobotClient < Thor
+  desc "process FILE", "read the contents of FILE"
 
   def process(file)
     instructions = process_instructions(file)
